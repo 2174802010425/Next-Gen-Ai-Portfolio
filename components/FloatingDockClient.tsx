@@ -7,6 +7,7 @@ import { useState } from "react";
 import { DynamicIcon } from "./DynamicIcon";
 import { useSidebar } from "./ui/sidebar";
 import { useMemo } from "react";
+import { ModeToggle } from "./DarkModeToggle";
 interface NavItem {
   title?: string | null;
   href?: string | null;
@@ -134,7 +135,7 @@ export function FloatingDockClient({ navItems }: FloatingDockClientProps) {
                 className="group relative flex items-center justify-center w-12 h-12 md:w-12 md:h-12"
               >
                 <div className="relative flex items-center justify-center w-full h-full rounded-full bg-white/10 dark:bg-white/5 group-hover/dock:bg-white/40 dark:group-hover/dock:bg-white/20 backdrop-blur-md border border-white/20 dark:border-white/10 group-hover/dock:border-white/50 dark:group-hover/dock:border-white/30 transition-all duration-500 ease-out hover:scale-125 hover:-translate-y-2 md:hover:-translate-y-3 hover:!bg-white/50 dark:hover:!bg-white/30 hover:!border-white/70 dark:hover:!border-white/40 hover:shadow-[0_20px_60px_-15px_rgba(0,0,0,0.3)]">
-                  <div className="w-6 h-6 md:w-6 md:h-6 text-neutral-400/60 group-hover/dock:text-neutral-500 dark:text-neutral-300/60 dark:group-hover/dock:text-neutral-300 group-hover:!text-neutral-600 dark:group-hover:!text-neutral-200 transition-colors duration-300">
+                  <div className="w-6 h-6 md:w-6 md:h-6 text-neutral-400/60 group-hover/dock:text-neutral-500 dark:text-neutral-300/60 dark:group-hover/dock:text-neutral-300 group-hover:text-neutral-600! dark:group-hover:text-neutral-200! transition-colors duration-300">
                     {desktopMoreMenuOpen ? (
                       <IconX className="w-6 h-6" />
                     ) : (
@@ -160,6 +161,7 @@ export function FloatingDockClient({ navItems }: FloatingDockClientProps) {
                       onItemClick={() => setDesktopMoreMenuOpen(false)}
                     />
                   ))}
+                  <ModeToggle/>
                 </div>
               )}
             </div>

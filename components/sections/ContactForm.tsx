@@ -12,7 +12,7 @@ export function ContactForm() {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const formData = new FormData(e.target as HTMLFormElement);
-
+    console.log('Form Data :', formData)
     startTransition(async () => {
       const result = await submitContactForm(formData);
 

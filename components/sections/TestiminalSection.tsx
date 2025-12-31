@@ -25,8 +25,6 @@ export async function TestimonialsSection() {
   if (!testimonials || testimonials.length === 0) {
     return null;
   }
-  console.log("Testimonials :", testimonials);
-  // Map Sanity testimonials to AnimatedTestimonials format
   const formattedTestimonials = testimonials.map((testimonial) => ({
     id: testimonial._id,
     quote: testimonial.testimonial || "",
